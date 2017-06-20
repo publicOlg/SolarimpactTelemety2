@@ -15,7 +15,7 @@ public class MySeries implements Connectable {
 	Series<Number, Number> serie = new XYChart.Series();
     MotorDataController controller;
     double lastUpdate = 0;
-
+    int i = 0;
 
     @Override
     public void update(String s) {
@@ -23,10 +23,14 @@ public class MySeries implements Connectable {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-
+                    if(i > 250){
+                        serie.getData().remove(0);
+                        i--;
+                    }
                     if(controller.xTime > lastUpdate + 0.01){
                         serie.getData().add(new XYChart.Data(controller.xTime, Double.valueOf(s)));
                         lastUpdate = controller.xTime;
+                        i++;
                     }
                 }
             });
