@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane onMouseClicked="#onMouse" prefHeight="290.0" prefWidth="118.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myConnectables.MyBar">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="220.0" layoutX="21.0" layoutY="6.0" strokeType="INSIDE" width="76.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#0084ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Label fx:id="pwmLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="1.0" layoutY="201.0" prefHeight="107.0" prefWidth="117.0" text="100">
+         <font>
+            <Font size="68.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="#0084ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Rectangle fx:id="bar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="221.0" layoutX="15.0" layoutY="5.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="whiteBar" width="89.0" />
+   </children>
+</AnchorPane>

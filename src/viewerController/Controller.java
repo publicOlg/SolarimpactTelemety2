@@ -51,6 +51,7 @@ public class Controller implements Initializable {
 	public ScrollPane consoleScroll;
 	public GridPane gridPaneMotorOverview;
 	public StackPane gpsPane;
+	public StackPane PWMPane;
 	public TextField consoleLines;
 	private Stage stagePopup;
 	private ChannelPopupController channelPopupController;
@@ -331,6 +332,19 @@ public class Controller implements Initializable {
 		}
 
 		gpsDataController  = fxmlLoader.getController();
+
+
+
+		fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/PWMPanel.fxml"));
+		try {
+			VBox box = fxmlLoader.load();
+			PWMPane.getChildren().add(box);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		//gpsDataController  = fxmlLoader.getController();
+
 	}
 
 
