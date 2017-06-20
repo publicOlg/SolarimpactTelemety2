@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox minHeight="340.0" minWidth="712.0" prefHeight="357.0" prefWidth="713.0" spacing="10.0" styleClass="PWMPanel" stylesheets="@../css/viewer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewerController.PWMPanelController">
+<VBox minHeight="340.0" minWidth="539.0" prefHeight="357.0" prefWidth="539.0" spacing="10.0" styleClass="PWMPanel" stylesheets="@../css/viewer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewerController.PWMPanelController">
    <children>
       <Label text="PWM Data:">
          <padding>
@@ -18,16 +18,16 @@
          </padding></Label>
       <GridPane fx:id="grid" alignment="CENTER" prefHeight="692.0" prefWidth="713.0">
         <columnConstraints>
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="110.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="110.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="110.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="110.0" />
-            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="110.0" />
-          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="110.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" prefWidth="80.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="80.0" prefWidth="80.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints maxHeight="399.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="676.0" minHeight="10.0" prefHeight="676.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="676.0" minHeight="10.0" prefHeight="676.0" valignment="TOP" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
             <Label text="PWM 1" />
@@ -38,7 +38,7 @@
             <Label text="PWM 6" GridPane.columnIndex="5" />
          </children>
          <VBox.margin>
-            <Insets bottom="5.0" />
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
          </VBox.margin>
       </GridPane>
    </children>
