@@ -22,7 +22,7 @@
             </fill>
          </Arc>
          <Circle styleClass="gaugeInner" fx:id="circel" fill="WHITE" layoutX="117.0" layoutY="121.0" radius="82.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-         <Label fx:id="labelSpeed" alignment="CENTER" contentDisplay="RIGHT" layoutX="45.0" layoutY="56.0" prefHeight="130.0" prefWidth="143.0" text="60">
+         <Label fx:id="labelSpeed" alignment="CENTER" contentDisplay="RIGHT" layoutX="45.0" layoutY="56.0" prefHeight="130.0" prefWidth="143.0" text="N/A">
             <font>
                <Font size="68.0" />
             </font>

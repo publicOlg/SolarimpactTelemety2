@@ -21,10 +21,10 @@
             <Label prefHeight="27.0" prefWidth="117.0" text="Breitengrad:" GridPane.columnIndex="1" />
             <Label text="Höhe:" GridPane.columnIndex="2" />
             <Label text="Sateliten:" GridPane.columnIndex="3" />
-            <MyLabel fx:id="labelLaenge" text="54°47′15,96″N" GridPane.rowIndex="1" />
-            <MyLabel fx:id="labelBreite" text="5°21′12,32″O" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <MyLabel fx:id="LabelHoehe" text="500m" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <MyLabel fx:id="labelSat" text="16" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <MyLabel fx:id="labelLaenge" text="N/A" GridPane.rowIndex="1" />
+            <MyLabel fx:id="labelBreite" text="N/A" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <MyLabel fx:id="LabelHoehe" text="N/A" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <MyLabel fx:id="labelSat" text="N/A" GridPane.columnIndex="3" GridPane.rowIndex="1" />
          </children>
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

@@ -57,6 +57,7 @@ public class MyBar implements Connectable,Initializable {
 
     public void initialize(URL location, ResourceBundle resources) {
         pwmLabel.setTooltip(new Tooltip("not connected"));
+        pwmLabel.setText("N/A");
         pwmLabel.getTooltip().setFont(Font.font("", 10));
         if(Main.data.myLabelIsSet(id))setConnection(Main.data.getMyLabelReferenc(id));
         intialHight = bar.getHeight();
