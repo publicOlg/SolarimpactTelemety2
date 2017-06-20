@@ -9,6 +9,7 @@ public interface Connectable {
 	}
 	
 	public default InfoPaket setConnection(char sign){
+    		Main.model.removeConnectable(this);
 			InfoPaket infoPaket = Main.model.getInfoPaketBySign(sign);
 			infoPaket.addConnectable(this);
 			return Main.model.getInfoPaketBySign(sign);

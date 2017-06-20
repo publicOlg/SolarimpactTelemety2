@@ -25,7 +25,15 @@ public class InfoPaket implements Runnable,Serializable {
     	this.name = name;
     	this.sign = sign;
     }
-    
+
+    public boolean removeConnectables(Connectable connectable){
+    	if(connectables.contains(connectable)){
+    		connectables.remove(connectable);
+    		return true;
+		}
+
+		return false;
+	}
 
     public void addConnectable(Connectable connectable){
     	this.connectables.add(connectable);
