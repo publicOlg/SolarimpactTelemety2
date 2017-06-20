@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<AnchorPane onMouseClicked="#onMouse" fx:controller="myConnectables.MyCurseGauge" maxHeight="-Infinity"
+            maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="236.0" prefWidth="232.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+    <StackPane prefHeight="150.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                <children>
+                    <Circle styleClass="gaugeOuter" layoutX="121.0" layoutY="116.0" radius="111.0" stroke="TRANSPARENT" strokeType="INSIDE">
+                        <fill>
+                            <LinearGradient endX="1.0" endY="1.0">
+                                <stops>
+                                    <Stop color="BLACK" />
+                                    <Stop color="BLACK" offset="0.007662835249042145" />
+                                    <Stop color="#0084ff" offset="1.0" />
+                                </stops>
+                            </LinearGradient>
+                        </fill>
+                    </Circle>
+                    <Circle styleClass="gaugeInner" layoutX="121.0" layoutY="116.0" radius="82.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                </children>
+            </AnchorPane>
+            <AnchorPane fx:id="curseGauge" prefHeight="200.0" prefWidth="200.0">
+                <children>
+                    <Rectangle arcHeight="5.0" arcWidth="5.0" height="39.0" layoutX="114.0" stroke="BLACK" strokeType="INSIDE" width="13.0" />
+                </children>
+            </AnchorPane>
+            <Label fx:id="labelCurse" alignment="CENTER" contentDisplay="RIGHT" layoutX="49.0" layoutY="51.0" prefHeight="130.0" prefWidth="143.0" text="0°">
+                <font>
+                    <Font size="68.0" />
+                </font>
+                <textFill>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop color="BLACK" />
+                            <Stop color="#1990ff" offset="1.0" />
+                        </stops>
+                    </LinearGradient>
+                </textFill>
+            </Label>
+        </children>
+    </StackPane>
+</AnchorPane>

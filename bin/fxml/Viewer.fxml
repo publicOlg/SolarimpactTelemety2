@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@../css/viewer.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewerController.Controller">
+  <tabs>
+    <Tab text="Settings">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <BorderPane layoutX="192.0" layoutY="96.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <left>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <content>
+                              <VBox fx:id="chanelTree" prefHeight="200.0" prefWidth="100.0" />
+                           </content>
+                        </ScrollPane>
+                     </left>
+                     <bottom>
+                        <HBox spacing="5.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Button fx:id="buttonNewChannel" alignment="CENTER" minHeight="25.0" minWidth="90.0" mnemonicParsing="false" onAction="#onNewButton" prefHeight="25.0" prefWidth="90.0" text="Add New" />
+                              <Region prefHeight="27.0" prefWidth="105.0" HBox.hgrow="NEVER" />
+                              <TextField fx:id="messageText" onAction="#onSend" prefHeight="27.0" prefWidth="1423.0" HBox.hgrow="ALWAYS" />
+                              <Button contentDisplay="CENTER" minHeight="25.0" minWidth="100.0" mnemonicParsing="false" onAction="#onSend" prefHeight="25.0" prefWidth="107.0" text="Send" />
+                              <Region minWidth="${rightVBox.width}" prefHeight="25.0" />
+                           </children>
+                           <BorderPane.margin>
+                              <Insets right="5.0" top="5.0" />
+                           </BorderPane.margin>
+                        </HBox>
+                     </bottom>
+                     <right>
+                        <VBox fx:id="rightVBox" prefHeight="994.0" prefWidth="165.0" spacing="5.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ToggleButton fx:id="buttonAutoScroll" mnemonicParsing="false" onAction="#setAutoscroll" prefHeight="27.0" prefWidth="163.0" text="AutoSctoll" textOverrun="CLIP" />
+                              <HBox prefWidth="200.0" spacing="5.0">
+                                 <children>
+                                    <ChoiceBox fx:id="comList" onMouseClicked="#comSelected" onMouseMoved="#mouseOverComList" prefHeight="27.0" prefWidth="82.0" />
+                                    <ToggleButton fx:id="buttonConnect" disable="true" mnemonicParsing="false" onAction="#onConnectButton" prefHeight="27.0" prefWidth="87.0" text="Connect" />
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </right>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <center>
+                        <ScrollPane fx:id="consoleScroll" fitToHeight="true" fitToWidth="true" hbarPolicy="ALWAYS" prefHeight="1004.0" prefWidth="1416.0" vbarPolicy="ALWAYS" BorderPane.alignment="CENTER">
+                           <content>
+                              <TextFlow fx:id="console" prefHeight="989.0" prefWidth="1500.0" styleClass="console">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets></TextFlow>
+                           </content>
+                           <BorderPane.margin>
+                              <Insets left="5.0" />
+                           </BorderPane.margin>
+                        </ScrollPane>
+                     </center>
+                  </BorderPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Untitled Tab 2">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>

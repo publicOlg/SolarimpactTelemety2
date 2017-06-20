@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import myConnectables.MyLabel?>
+
+<VBox prefHeight="552.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewerController.MotorDataController">
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <VBox>
+         <children>
+            <Label text="Motor 1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+      <GridPane hgap="5.0">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="124.0" minWidth="10.0" prefWidth="124.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="89.0" minWidth="10.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="120.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="110.0" minWidth="10.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="161.0" minWidth="10.0" prefWidth="161.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Voltage:" GridPane.columnIndex="3" />
+            <Label text="NOR:" GridPane.rowIndex="1" />
+            <Label text="Power:" GridPane.rowIndex="2" />
+            <Label text="Current:" GridPane.rowIndex="3" />
+            <Label text="V" GridPane.columnIndex="2" />
+            <MyLabel fx:id="motorVoltage" text="15,8" GridPane.columnIndex="1" />
+            <MyLabel fx:id="motorNOR" text="5000" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <MyLabel fx:id="motorPower" text="200" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <MyLabel fx:id="motorCurrent" text="20" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="RPM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="W" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="A" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Current:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Voltage:" />
+            <Label text="V" GridPane.columnIndex="5" />
+            <Label text="mAh" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <MyLabel fx:id="akkuVoltage" text="22,5" GridPane.columnIndex="4" />
+            <MyLabel fx:id="akkuCurrent" text="2000" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <LineChart fx:id="chart" createSymbols="false" verticalZeroLineVisible="false">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Button fx:id="motorSwitch" mnemonicParsing="false" onAction="#onMotorSwitch" text="Motor On/Off" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

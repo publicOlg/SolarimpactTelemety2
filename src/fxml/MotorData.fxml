@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import myConnectables.MyLabel?>
+<?import graphicComponents.MyButton?>
+
+<VBox styleClass="motorPanel" prefHeight="412.0" prefWidth="685.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@../css/viewer.css" fx:controller="viewerController.MotorDataController" >
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
+   <children>
+      <VBox>
+         <children>
+            <Label text="Motor 1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="3.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <GridPane hgap="5.0" VBox.vgrow="NEVER">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="124.0" minWidth="40.0" prefWidth="113.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="100.0" minWidth="40.0" prefWidth="70.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="148.0" minWidth="25.0" prefWidth="78.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="193.0" minWidth="40.0" prefWidth="119.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="147.0" minWidth="40.0" prefWidth="70.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="192.0" minWidth="25.0" prefWidth="93.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Voltage:" GridPane.columnIndex="3" />
+            <Label text="NOR:" GridPane.rowIndex="1" />
+            <Label text="Power:" GridPane.rowIndex="2" />
+            <Label text="Current:" GridPane.rowIndex="3" />
+            <Label text="V" GridPane.columnIndex="2" />
+            <MyLabel fx:id="motorVoltage"  GridPane.columnIndex="1" />
+            <MyLabel fx:id="motorNOR"  GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <MyLabel fx:id="motorPower"  GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <MyLabel fx:id="motorCurrent"  GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="RPM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="W" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="A" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Current:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Voltage:" />
+            <Label text="V" GridPane.columnIndex="5" />
+            <Label text="mAh" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <MyLabel fx:id="akkuVoltage"  GridPane.columnIndex="4" />
+            <MyLabel fx:id="akkuCurrent"  GridPane.columnIndex="4" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <LineChart fx:id="chart" animated="false" createSymbols="false"  onMouseClicked="#onChartMouseClicked" verticalZeroLineVisible="false" VBox.vgrow="ALWAYS">
+          <xAxis><NumberAxis animated="true" cache="false" autoRanging="false"/></xAxis>
+          <yAxis><NumberAxis animated="false" cache="false" autoRanging="true" /></yAxis>
+      </LineChart>
+      <HBox alignment="CENTER_LEFT" prefHeight="12.0" prefWidth="534.0">
+         <children>
+            <MyButton fx:id="motorSwitch" mnemonicParsing="false"  text="Motor On/Off" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

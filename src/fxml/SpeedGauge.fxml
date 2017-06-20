@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.Label?>
+<AnchorPane onMouseClicked="#onMouse" fx:controller="myConnectables.MySpeedGauge"
+            maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="236.0" prefWidth="232.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+         <Arc styleClass="gaugeOuter" fx:id="speedGauge" layoutX="117.0"
+              layoutY="121.0" length="270.0" radiusX="111.0" radiusY="111.0" startAngle="90.0" stroke="WHITE" strokeType="INSIDE" type="ROUND">
+            <fill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop color="BLACK" />
+                     <Stop color="#0084ff" offset="1.0" />
+                  </stops>
+               </LinearGradient>
+            </fill>
+         </Arc>
+         <Circle styleClass="gaugeInner" fx:id="circel" fill="WHITE" layoutX="117.0" layoutY="121.0" radius="82.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+         <Label fx:id="labelSpeed" alignment="CENTER" contentDisplay="RIGHT" layoutX="45.0" layoutY="56.0" prefHeight="130.0" prefWidth="143.0" text="60">
+            <font>
+               <Font size="68.0" />
+            </font>
+            <textFill>
+               <LinearGradient endX="1.0" endY="1.0">
+                  <stops>
+                     <Stop color="BLACK" />
+                     <Stop color="#1990ff" offset="1.0" />
+                  </stops>
+               </LinearGradient>
+            </textFill>
+         </Label>
+   </children>
+</AnchorPane>

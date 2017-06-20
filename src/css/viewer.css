@@ -1,0 +1,58 @@
+.root{
+    -fx-font-size: 10pt;
+    -fx-font-family: "Verdena";
+    -fx-text-fill: black;
+    -fx-border-radius: 5pt;
+    -fx-background: #F5F5F5;
+}
+
+.button{
+	-fx-min-height: 20pt;
+}
+
+.text-field{
+	-fx-min-height: 20pt;
+	-fx-min-width: 20pt;
+}
+
+.label{
+	-fx-min-height: 20pt;
+}
+
+.check-box{
+	-fx-min-height: 20pt;
+}
+
+.toggle-button{
+	-fx-min-height: 20pt;
+}
+
+.choice-box{
+	-fx-min-height: 20pt;
+}
+
+.console{
+	-fx-background-color: white;
+	-fx-font-size: 12pt;
+}
+
+.popup-box{
+       -fx-border-color: #d3d3d3;
+}
+
+.gpsPanel{
+      -fx-border-color: #d3d3d3;
+      -fx-border-radius: 5pt;
+}
+
+.motorPanel{
+      -fx-border-color: #d3d3d3;
+      -fx-border-radius: 5pt;
+}
+
+.gaugeInner{
+    -fx-fill: #F5F5F5;
+}
+
+.gaugeOuter{
+}
