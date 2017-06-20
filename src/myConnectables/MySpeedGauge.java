@@ -23,9 +23,8 @@ public class MySpeedGauge implements Connectable,Initializable {
 
     public Arc speedGauge;
     public Label labelSpeed;
-    public Circle circle;
     private int id;
-    int maxSpeed = 60;
+    double maxSpeed = 30;
 
     public MySpeedGauge(){
         id = Main.data.getIdForLabel();
@@ -34,7 +33,7 @@ public class MySpeedGauge implements Connectable,Initializable {
 
 
     public void update(String s){
-
+        if(Double.valueOf(s) > maxSpeed) maxSpeed = Double.valueOf(s);
         double angel = Double.valueOf(s) / maxSpeed * 360;
         Platform.runLater(new Runnable() {
             @Override
