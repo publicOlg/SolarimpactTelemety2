@@ -63,6 +63,12 @@ public class Model {
 	}*/
 
 
+	public void removeConnectable(Connectable connectable){
+		for(InfoPaket infoPaket : infoPakets){
+			if(infoPaket.removeConnectables(connectable)) return;
+		}
+	}
+
 	public void addNewInfoPaket(String name, char sign){
 		addInfoPaket(name, sign);
 		Main.data.addNewInfoPaket(name,sign);
