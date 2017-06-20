@@ -22,7 +22,7 @@ public class GpsDataController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/SpeedGauge.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxmlMinimalComponents/SpeedGauge.fxml"));
         AnchorPane panelSpeed = null;
         try {
             panelSpeed = fxmlLoader.load();
@@ -33,7 +33,7 @@ public class GpsDataController implements Initializable {
 
 
 
-        fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/CurseGauge.fxml"));
+        fxmlLoader = new FXMLLoader(getClass().getResource("/fxmlMinimalComponents/CurseGauge.fxml"));
         AnchorPane panelCurse = null;
         try {
             panelCurse = fxmlLoader.load();

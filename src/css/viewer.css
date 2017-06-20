@@ -45,9 +45,18 @@
       -fx-border-radius: 5pt;
 }
 
+.PWMPanel{
+      -fx-border-color: #d3d3d3;
+      -fx-border-radius: 5pt;
+}
+
 .motorPanel{
       -fx-border-color: #d3d3d3;
       -fx-border-radius: 5pt;
+}
+
+.PWM-Label{
+        -fx-min-height: 80pt;
 }
 
 .gaugeInner{
@@ -55,4 +64,8 @@
 }
 
 .gaugeOuter{
+}
+
+.whiteBar{
+    -fx-fill: #F5F5F5;
 }
