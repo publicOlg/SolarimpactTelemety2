@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane onMouseClicked="#onMouse" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="236.0" prefWidth="232.0" xmlns="http://javafx.com/javafx/8"  fx:controller="myConnectables.MyHDOP"
+            xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane layoutX="10.0" layoutY="10.0" prefHeight="238.0" prefWidth="236.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Circle fx:id="circle" radius="110.0" stroke="TRANSPARENT" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#007bff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Circle fill="WHITE" radius="40.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Label fx:id="labelHDOP" alignment="CENTER" contentDisplay="CENTER" prefHeight="126.0" prefWidth="200.0" text="50">
+               <font>
+                  <Font size="68.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#0084ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

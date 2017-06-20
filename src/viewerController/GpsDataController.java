@@ -15,8 +15,8 @@ public class GpsDataController implements Initializable {
     public MyLabel labelBreite;
     public MyLabel LabelHoehe;
     public MyLabel labelSat;
-    public MyLabel labelCurse;
     public AnchorPane curseGaugePane;
+    public AnchorPane HDOPPane;
     public AnchorPane speedGaugePane;
 
 
@@ -41,6 +41,14 @@ public class GpsDataController implements Initializable {
             e.printStackTrace();
         }
         curseGaugePane.getChildren().add(panelCurse);
+
+        fxmlLoader = new FXMLLoader(getClass().getResource("/fxmlMinimalComponents/HDOP.fxml"));
+        try {
+            panelCurse = fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        HDOPPane.getChildren().add(panelCurse);
 
 
     }
