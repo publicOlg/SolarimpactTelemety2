@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.paint.*?>
@@ -9,25 +10,7 @@
 
 <AnchorPane onMouseClicked="#onMouse" prefHeight="270.0" prefWidth="83.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myConnectables.MyBar">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" height="220.0" layoutX="13.0" layoutY="6.0" strokeType="INSIDE" width="52.0">
-         <stroke>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="BLACK" />
-                  <Stop color="WHITE" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </stroke>
-         <fill>
-            <LinearGradient endX="1.0" endY="1.0">
-               <stops>
-                  <Stop color="BLACK" />
-                  <Stop color="#0084ff" offset="1.0" />
-               </stops>
-            </LinearGradient>
-         </fill>
-      </Rectangle>
-      <Label fx:id="pwmLabel" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="-9.0" layoutY="216.0" prefHeight="54.0" prefWidth="92.0" text="100">
+      <Label fx:id="pwmLabel" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="-9.0" layoutY="216.0" prefHeight="54.0" prefWidth="92.0" text="100" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <font>
             <Font size="42.0" />
          </font>
@@ -40,6 +23,34 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Rectangle fx:id="bar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="221.0" layoutX="4.0" layoutY="5.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="whiteBar" width="70.0" />
+      <StackPane alignment="TOP_CENTER" layoutX="14.0" prefHeight="235.0" prefWidth="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="220.0" strokeType="INSIDE" width="50.0">
+               <stroke>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </stroke>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#0084ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+               <StackPane.margin>
+                  <Insets top="1.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Rectangle fx:id="bar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="221.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="whiteBar" width="83.0" />
+         </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </StackPane>
    </children>
 </AnchorPane>
