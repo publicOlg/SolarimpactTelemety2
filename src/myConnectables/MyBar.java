@@ -22,27 +22,39 @@ import static oracle.jrockit.jfr.events.Bits.intValue;
  */
 public class MyBar implements Connectable,Initializable {
 
-    public Rectangle bar;
+    public Rectangle barUpper;
+    public Rectangle barLower;
     public Label pwmLabel;
     private int id;
     private double intialHight;
-    private double maxPWM = 100;
+    private double maxPWM = 255;
 
     public MyBar(){
         id = Main.data.getIdForLabel();
-
     }
 
 
     public void update(String s){
+        Double value = Double.valueOf(s);
 
-        if(Double.valueOf(s) > maxPWM) maxPWM = Double.valueOf(s);
+        if(value > maxPWM) maxPWM = Double.valueOf(s);
 
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                bar.heightProperty().setValue((1-Double.valueOf(s) / maxPWM) * intialHight);
-                pwmLabel.setText(s);
+
+                if(value > (maxPWM - 1) / 2) {
+                    barUpper.heightProperty().setValue((1-(2*value-(maxPWM-1)) / maxPWM) * intialHight);
+                    barLower.heightProperty().setValue(0);
+                }else if (value < (maxPWM - 1) / 2){
+                    barUpper.heightProperty().setValue(0);
+                    barLower.heightProperty().setValue((value / maxPWM) * 2 * intialHight);
+                }else{
+                    barUpper.heightProperty().setValue(intialHight);
+                    barUpper.heightProperty().setValue(intialHight);
+                }
+
+                pwmLabel.setText(Integer.toString((int) (((value-(maxPWM - 1)/2) / (maxPWM - 1)/2) * 400)));
             }
         });
     }
@@ -60,8 +72,9 @@ public class MyBar implements Connectable,Initializable {
         pwmLabel.setText("N/A");
         pwmLabel.getTooltip().setFont(Font.font("", 10));
         if(Main.data.myLabelIsSet(id))setConnection(Main.data.getMyLabelReferenc(id));
-        intialHight = bar.getHeight();
-        bar.heightProperty().setValue(0.5 * intialHight);
+        intialHight = barUpper.getHeight();
+        barUpper.heightProperty().setValue(0.5 * intialHight);
+        barLower.heightProperty().setValue(0);
     }
 
     public InfoPaket setConnection(char sign){

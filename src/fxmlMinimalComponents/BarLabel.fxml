@@ -23,7 +23,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <StackPane alignment="TOP_CENTER" layoutX="14.0" prefHeight="235.0" prefWidth="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane alignment="TOP_CENTER" layoutX="14.0" prefHeight="229.0" prefWidth="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" height="220.0" strokeType="INSIDE" width="50.0">
                <stroke>
@@ -46,7 +46,15 @@
                   <Insets top="1.0" />
                </StackPane.margin>
             </Rectangle>
-            <Rectangle fx:id="bar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="221.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="whiteBar" width="83.0" />
+            <Rectangle fx:id="barUpper" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="224.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="whiteBar" width="83.0" />
+         </children>
+         <padding>
+            <Insets top="5.0" />
+         </padding>
+      </StackPane>
+      <StackPane alignment="BOTTOM_CENTER" layoutX="14.0" prefHeight="229.0" prefWidth="83.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Rectangle fx:id="barLower" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="224.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="whiteBar" width="83.0" />
          </children>
          <padding>
             <Insets top="5.0" />

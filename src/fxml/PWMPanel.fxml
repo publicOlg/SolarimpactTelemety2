@@ -10,7 +10,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox minHeight="340.0" minWidth="539.0" prefHeight="357.0" prefWidth="539.0" spacing="10.0" styleClass="PWMPanel" stylesheets="@../css/viewer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewerController.PWMPanelController">
+<VBox  minWidth="539.0" prefHeight="325" prefWidth="750" spacing="5.0" styleClass="PWMPanel" stylesheets="@../css/viewer.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewerController.PWMPanelController">
    <children>
       <Label text="PWM Data:">
          <padding>

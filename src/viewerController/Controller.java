@@ -24,10 +24,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 import javafx.stage.Modality;
@@ -52,6 +49,7 @@ public class Controller implements Initializable {
 	public GridPane gridPaneMotorOverview;
 	public StackPane gpsPane;
 	public StackPane PWMPane;
+	public StackPane settingPane;
 	public TextField consoleLines;
 	private Stage stagePopup;
 	private ChannelPopupController channelPopupController;
@@ -333,7 +331,14 @@ public class Controller implements Initializable {
 
 		gpsDataController  = fxmlLoader.getController();
 
-
+		//gpsDataController  = fxmlLoader.getController();
+		fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/Settings.fxml"));
+		try {
+			AnchorPane pane = fxmlLoader.load();
+			settingPane.getChildren().add(pane);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 
 		fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/PWMPanel.fxml"));
 		try {
@@ -343,7 +348,6 @@ public class Controller implements Initializable {
 			e.printStackTrace();
 		}
 
-		//gpsDataController  = fxmlLoader.getController();
 
 	}
 

@@ -17,14 +17,13 @@ public class MyButton extends Button {
     private String code = "";
     private int id;
 
-
     public MyButton(){
         super();
 
-        id = Main.data.getIdForButton();
-        if(Main.data.myButtonIsSet(id)){
-            code = Main.data.getMyButtonReferenceCode(id);
-            setText(Main.data.getMyButtonReferenceTxt(id));
+
+        id = Main.data.getIdForSender();
+        if(Main.data.SenderIsSet(id)){
+            code = Main.data.getSenderReferenceCode(id);
         }
 
         this.setTooltip(new Tooltip("Code: " + code));
@@ -51,7 +50,7 @@ public class MyButton extends Button {
 
     public void setCode(String code){
         this.code = code;
-        Main.data.setMyButtonReferenceCode(code,id);
+        Main.data.setSenderReferenceCode(code,id);
         this.setTooltip(new Tooltip("Code: " + code));
     }
 
