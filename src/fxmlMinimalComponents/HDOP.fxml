@@ -15,7 +15,8 @@
             prefHeight="236.0" prefWidth="232.0" xmlns="http://javafx.com/javafx/8"  fx:controller="myConnectables.MyHDOP"
             xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <StackPane layoutX="10.0" layoutY="10.0" prefHeight="238.0" prefWidth="236.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <StackPane layoutX="10.0" layoutY="10.0" prefHeight="238.0" prefWidth="236.0" AnchorPane.bottomAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Circle fx:id="circle" radius="110.0" stroke="TRANSPARENT" strokeType="INSIDE">
                <fill>
@@ -30,7 +31,7 @@
             <Circle fill="WHITE" radius="40.0" stroke="TRANSPARENT" strokeType="INSIDE" />
             <Label fx:id="labelHDOP" alignment="CENTER" contentDisplay="CENTER" prefHeight="126.0" prefWidth="200.0" text="50">
                <font>
-                  <Font size="68.0" />
+                  <Font size="48.00" />
                </font>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">

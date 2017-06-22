@@ -55,6 +55,11 @@
       -fx-border-radius: 5pt;
 }
 
+.Settings{
+              -fx-border-color: #d3d3d3;
+              -fx-border-radius: 5pt;
+}
+
 .PWM-Label{
         -fx-min-height: 80pt;
 }

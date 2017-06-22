@@ -2,7 +2,6 @@ package application;
 
 import communication.InfoPaket;
 
-import javax.print.DocFlavor;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -84,49 +83,45 @@ public class Data implements Serializable {
 
 
 
-    // FOR  MYBUTTON
-    private ArrayList<String> myButtonReferencesCode = new ArrayList<String>();
-    private ArrayList<String> myButtonReferencesTxt = new ArrayList<String>();
+    // FOR  Sender
+    private ArrayList<String> SenderReferencesCode = new ArrayList<String>();
 
-    private int idForButton = -1;
+    private int idForSender = -1;
 
-    public int getIdForButton(){
+    public int getIdForSender(){
 
-        idForButton++;
-        if(myButtonReferencesCode.size() < idForButton + 1){
-            myButtonReferencesCode.add(null);
-            myButtonReferencesTxt.add(null);
+        idForSender++;
+        if(SenderReferencesCode.size() < idForSender + 1){
+            SenderReferencesCode.add(null);
         }
-        return idForButton;
+        return idForSender;
     }
 
-    public String getMyButtonReferenceCode(int id){
-        return myButtonReferencesCode.get(id);
+    public String getSenderReferenceCode(int id){
+        return SenderReferencesCode.get(id);
     }
 
-    public String getMyButtonReferenceTxt(int id){
-        return myButtonReferencesCode.get(id);
+    public String getSenderReferenceTxt(int id){
+        return SenderReferencesCode.get(id);
     }
 
-    public boolean myButtonIsSet(int id) {
-        if (myButtonReferencesCode.size() > id){
-            if (myButtonReferencesCode.get(id) != null) {
+    public boolean SenderIsSet(int id) {
+        if (SenderReferencesCode.size() > id){
+            if (SenderReferencesCode.get(id) != null) {
                 return true;
             }
         }
         return false;
     }
 
-    public void setMyButtonReferenceCode(String code, int id){
-        myButtonReferencesCode.set(id, code);
-    }
-
-    public void setMyButtonReferenceTxt(String txt, int id){
-        myButtonReferencesTxt.set(id, txt);
+    public void setSenderReferenceCode(String code, int id){
+        SenderReferencesCode.set(id, code);
     }
 
     public void reset(){
         idForLabel = -1;
-        idForButton = -1;
+        idForSender = -1;
     }
+
+
 }
