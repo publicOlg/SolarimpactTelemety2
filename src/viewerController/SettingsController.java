@@ -1,36 +1,30 @@
 package viewerController;
 
 import javafx.scene.control.*;
+import myConnectables.MyLabel;
+import myConnectables.MyTextField;
 
 /**
  * Created by TheOLGPC on 22.06.2017.
  */
 public class SettingsController {
 
-    public Slider yDif;
-    public Slider xDif;
-    public Label xDifLabel;
-    public Label yDifLabel;
+    public MyLabel xDifLabel;
+    public MyLabel yDifLabel;
 
-    public TextField rudderOne;
-    public TextField rudderTwo;
-    public TextField rudderThree;
-    public TextField rudderFour;
+    public MyTextField rudderOne;
+    public MyTextField rudderTwo;
+    public MyTextField rudderThree;
+    public MyTextField rudderFour;
     public CheckBox checkTwo;
     public CheckBox checkFour;
-    public Button rudderSend;
 
     public ToggleButton loggerOn;
-    public TextField textLogger;
-    public Button SendLogger;
+    public MyTextField textLogger;
 
-    public Slider pilotSlider;
-    public Label textPilot;
-    public Button pilotSend;
+    public MyLabel textPilot;
 
-    public Slider hightSlider;
-    public Label textHight;
-    public Button sendHight;
+    public MyLabel textHight;
 
 
     public void onDifferantialSliderMoved(){
@@ -66,8 +60,42 @@ public class SettingsController {
             rudderFour.setDisable(false);
             rudderFour.textProperty().unbind();
         }
+    }
 
+
+    public void onDifSend(){
+        if(xDifLabel.send() && yDifLabel.send())return;
+        warning();
 
     }
 
+    public void onRudderSend(){
+        if (rudderOne.send() && rudderTwo.send()
+                && rudderThree.send() && rudderFour.send()) return;
+        warning();
+    }
+
+    public void onPilotSend(){
+        if (textPilot.send())return;
+        warning();
+    }
+
+    public void onLoggerSend(){
+        if(textLogger.send()) return;
+        warning();
+    }
+
+    public void onHighttSend(){
+        if (textHight.send()) return;
+        warning();
+    }
+
+    private void warning(){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error Dialog");
+        alert.setHeaderText("Send Process did not work!");
+        alert.setContentText("False input Value or missing Channel Information.");
+
+        alert.showAndWait();
+    }
 }

@@ -14,7 +14,9 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import myConnectables.MyTextField?>
 
+<?import myConnectables.MyLabel?>
 <AnchorPane minHeight="355" prefWidth="760.0" styleClass="Settings" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewerController.SettingsController">
    <children>
       <VBox layoutX="389.0" layoutY="41.0" prefHeight="292.0" prefWidth="760.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -30,10 +32,10 @@
                 <RowConstraints maxHeight="229.0" minHeight="10.0" prefHeight="124.0" vgrow="ALWAYS" />
               </rowConstraints>
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="20">
                      <children>
                         <Slider fx:id="yDif" blockIncrement="0.01" majorTickUnit="0.5" max="1.0" min="-1.0" onMouseReleased="#onDifferantialSliderMoved" orientation="VERTICAL" prefHeight="129.0" prefWidth="14.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-                        <VBox prefHeight="158.0" prefWidth="214.0" spacing="10.0">
+                        <VBox prefHeight="158.0" prefWidth="300" spacing="10.0">
                            <children>
                               <Slider blockIncrement="0.01" majorTickUnit="0.5" max="1.0" min="-1.0" onMouseReleased="#onDifferantialSliderMoved" showTickLabels="true" showTickMarks="true" snapToTicks="true" VBox.vgrow="ALWAYS" fx:id="xDif" />
                               <Label text="X / Y DIfferentials :">
@@ -43,21 +45,27 @@
                               </Label>
                               <HBox spacing="5.0">
                                  <children>
-                                    <Label text="X:" />
-                                    <Label text="${yDif.value}" fx:id="xDifLabel" />
+                                    <Label minWidth="20.0" text="X:" />
+                                    <MyLabel prefWidth="130" text="${yDif.value}" fx:id="xDifLabel" />
                                  </children>
                               </HBox>
                               <HBox spacing="5.0">
                                  <children>
-                                    <Label text="Y:" />
-                                    <Label fx:id="yDifLabel" text="${xDif.value}" />
+                                    <Label minWidth="20.0" text="Y:" />
+                                    <MyLabel fx:id="yDifLabel" prefHeight="35.0" prefWidth="${xDifLabel.width}" text="${xDif.value}" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                    <Button minWidth="60.0" onAction="#onDifSend" mnemonicParsing="false" text="Send" />
                                  </children>
                               </HBox>
                            </children>
                         </VBox>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" left="20.0" right="10.0" top="10.0" />
+                        <Insets bottom="10.0" right="5" left="20.0" top="10.0" />
                      </padding>
                   </HBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="1">
@@ -69,22 +77,22 @@
                         </Label>
                         <HBox prefHeight="23.0" prefWidth="205.0" spacing="5.0">
                            <children>
-                              <TextField fx:id="rudderOne" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="rudderTwo" HBox.hgrow="ALWAYS" />
+                              <MyTextField fx:id="rudderOne" HBox.hgrow="ALWAYS" />
+                              <MyTextField fx:id="rudderTwo" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="205.0" spacing="5.0">
                            <children>
-                              <TextField fx:id="rudderThree" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="rudderFour" HBox.hgrow="ALWAYS" />
+                              <MyTextField fx:id="rudderThree" HBox.hgrow="ALWAYS" />
+                              <MyTextField fx:id="rudderFour" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                            <children>
-                              <CheckBox fx:id="checkTwo" onMouseClicked="#onCheckRudder" mnemonicParsing="false" text="2x" />
-                              <CheckBox fx:id="checkFour" onMouseClicked="#onCheckRudder" mnemonicParsing="false" text="4x" />
+                              <CheckBox fx:id="checkTwo" mnemonicParsing="false" onMouseClicked="#onCheckRudder" text="2x" />
+                              <CheckBox fx:id="checkFour" mnemonicParsing="false" onMouseClicked="#onCheckRudder" text="4x" />
                               <Region prefHeight="12.0" prefWidth="90.0" HBox.hgrow="ALWAYS" />
-                              <Button fx:id="rudderSend" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Send">
+                              <Button onAction="#onRudderSend" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Send">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
@@ -108,8 +116,8 @@
                               <ToggleButton fx:id="loggerOn" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="58.0" text="On/Off" />
                               <Region prefHeight="25.0" prefWidth="92.0" HBox.hgrow="ALWAYS" />
                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="150.0" prefHeight="30.0" prefWidth="99.0" text="Logs per Second:" />
-                              <TextField fx:id="textLogger" minWidth="100.0" prefHeight="30.0" prefWidth="212.0" />
-                              <Button fx:id="SendLogger" minWidth="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Go" />
+                              <MyTextField fx:id="textLogger" minWidth="100.0" prefHeight="30.0" prefWidth="212.0" />
+                              <Button onAction="#onLoggerSend" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Send" />
                            </children>
                            <VBox.margin>
                               <Insets left="5.0" />
@@ -130,9 +138,9 @@
                            <children>
                               <Slider fx:id="pilotSlider" majorTickUnit="1.0" max="5.0" minWidth="100.0" minorTickCount="9" prefHeight="25.0" prefWidth="193.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
                               <Region prefHeight="25.0" prefWidth="95.0" HBox.hgrow="ALWAYS" />
-                              <Label minWidth="100.0" prefHeight="30.0" prefWidth="50.0" text="Trägheit in ms:" />
-                              <Label fx:id="textPilot" minWidth="100.0" prefHeight="30.0" prefWidth="186.0" text="${pilotSlider.value}" />
-                              <Button fx:id="pilotSend" minWidth="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Go" />
+                              <Label minWidth="100.0" prefHeight="30.0" prefWidth="50.0" alignment="CENTER_RIGHT" text="Trägheit in ms:" />
+                              <MyLabel fx:id="textPilot" minWidth="${textLogger.width}" prefHeight="30.0" prefWidth="186.0" text="${pilotSlider.value}" />
+                              <Button onAction="#onPilotSend" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Send" />
                            </children>
                            <padding>
                               <Insets left="5.0" right="5.0" />
@@ -156,15 +164,15 @@
                            <children>
                               <Region prefHeight="200.0" prefWidth="200.0" />
                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="40.0" prefHeight="30.0" prefWidth="40.0" text="Höhe:" />
-                              <Label fx:id="textHight" prefHeight="32.0" prefWidth="142.0" text="${hightSlider.value}">
+                              <MyLabel fx:id="textHight" prefHeight="32.0" prefWidth="142.0" text="${hightSlider.value}">
                                  <padding>
                                     <Insets bottom="5.0" left="10.0" right="5.0" />
                                  </padding>
                                  <HBox.margin>
                                     <Insets left="5.0" />
                                  </HBox.margin>
-                              </Label>
-                              <Button fx:id="sendHight" minWidth="50.0" mnemonicParsing="false" text="Send" />
+                              </MyLabel>
+                              <Button onAction="#onHighttSend" minWidth="60.0" mnemonicParsing="false" text="Send" />
                            </children>
                         </HBox>
                      </children>

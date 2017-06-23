@@ -14,6 +14,7 @@
 	public class MyLabel extends Label implements Connectable {
 
 		private int id;
+		private char sign;
 
 
 		public MyLabel(){
@@ -26,7 +27,7 @@
 			if(Main.data.myLabelIsSet(id))setConnection(Main.data.getMyLabelReferenc(id));
 
 			this.setOnMouseClicked( (event )->{
-				char sign = Main.controller.openSelectChannel(event.getScreenX(),event.getScreenY());
+				sign = Main.controller.openSelectChannel(event.getScreenX(),event.getScreenY());
 				if(sign != Character.MIN_VALUE){
 					setConnection(sign);
 
@@ -45,8 +46,17 @@
 
 		public InfoPaket setConnection(char sign){
 			Main.data.setMyLabelReferences(sign,id);
+			this.sign = sign;
 			this.getTooltip().setText(Main.model.getInfoPaketBySign(sign).getName() + " " + sign);
 			return Connectable.super.setConnection(sign);
+		}
+
+		public boolean send(){
+			if(sign != Character.MIN_VALUE && Main.model.isNumeric(getText()) && Main.model.com != null ){
+						Main.model.com.send(sign+getText());
+						return true;
+			}
+			return false;
 		}
 
 		@Override
