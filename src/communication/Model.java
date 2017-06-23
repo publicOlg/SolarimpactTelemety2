@@ -162,6 +162,19 @@ public class Model {
 		infoPakets = Main.data.getAllInfoPakets();
 		setColors();
 	}
+
+	public boolean isNumeric(String str)
+	{
+		try
+		{
+			double d = Double.parseDouble(str);
+		}
+		catch(NumberFormatException nfe)
+		{
+			return false;
+		}
+		return true;
+	}
 }
 	
 	
