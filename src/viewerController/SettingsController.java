@@ -1,14 +1,23 @@
 package viewerController;
 
+import javafx.beans.binding.Bindings;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.util.StringConverter;
+import javafx.util.converter.NumberStringConverter;
 import myConnectables.MyLabel;
 import myConnectables.MyTextField;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * Created by TheOLGPC on 22.06.2017.
  */
-public class SettingsController {
+public class SettingsController implements Initializable {
 
+    public Slider yDif;
+    public Slider xDif;
     public MyLabel xDifLabel;
     public MyLabel yDifLabel;
 
@@ -97,5 +106,13 @@ public class SettingsController {
         alert.setContentText("False input Value or missing Channel Information.");
 
         alert.showAndWait();
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        StringConverter<Number> converter = new NumberStringConverter();
+        Bindings.bindBidirectional(yDifLabel.textProperty(),yDif.valueProperty(),converter);
+        Bindings.bindBidirectional(xDifLabel.textProperty(),xDif.valueProperty(),converter);
+
     }
 }
