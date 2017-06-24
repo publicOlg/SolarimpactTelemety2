@@ -46,13 +46,13 @@
                               <HBox spacing="5.0">
                                  <children>
                                     <Label minWidth="20.0" text="X:" />
-                                    <MyLabel prefWidth="130" text="${yDif.value}" fx:id="xDifLabel" />
+                                    <MyLabel prefWidth="130"  fx:id="xDifLabel" />
                                  </children>
                               </HBox>
                               <HBox spacing="5.0">
                                  <children>
                                     <Label minWidth="20.0" text="Y:" />
-                                    <MyLabel fx:id="yDifLabel" prefHeight="35.0" prefWidth="${xDifLabel.width}" text="${xDif.value}" />
+                                    <MyLabel fx:id="yDifLabel" prefHeight="35.0" prefWidth="${xDifLabel.width}" />
                                  </children>
                               </HBox>
                               <HBox>
