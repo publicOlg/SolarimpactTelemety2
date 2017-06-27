@@ -130,7 +130,7 @@ public class InfoPaket implements Runnable,Serializable {
 					con.update(getInfo());
 				}
 				try {
-					sleep(50);
+					sleep(20);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}

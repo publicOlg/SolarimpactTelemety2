@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
  */
 public class SettingsController implements Initializable {
 
+    public Slider pilotSlider;
+    public Slider hightSlider;
     public Slider yDif;
     public Slider xDif;
     public MyLabel xDifLabel;
@@ -113,6 +115,8 @@ public class SettingsController implements Initializable {
         StringConverter<Number> converter = new NumberStringConverter();
         Bindings.bindBidirectional(yDifLabel.textProperty(),yDif.valueProperty(),converter);
         Bindings.bindBidirectional(xDifLabel.textProperty(),xDif.valueProperty(),converter);
+        Bindings.bindBidirectional(textPilot.textProperty(),pilotSlider.valueProperty(),converter);
+        Bindings.bindBidirectional(textHight.textProperty(),hightSlider.valueProperty(),converter);
 
     }
 }
