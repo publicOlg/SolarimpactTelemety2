@@ -17,7 +17,7 @@
    <children>
       <VBox>
          <children>
-            <Label text="Motor 1">
+            <Label fx:id="name" text="Motor 1">
                <font>
                   <Font size="24.0" />
                </font>
@@ -48,7 +48,7 @@
          <children>
             <Label text="Voltage:" GridPane.columnIndex="3" />
             <Label text="NOR:" GridPane.rowIndex="1" />
-            <Label text="Power:" GridPane.rowIndex="2" />
+            <Label text="Temp:" GridPane.rowIndex="2" />
             <Label text="Current:" GridPane.rowIndex="3" />
             <Label text="V" GridPane.columnIndex="2" />
             <MyLabel fx:id="motorVoltage"  GridPane.columnIndex="1" />
@@ -56,7 +56,7 @@
             <MyLabel fx:id="motorPower"  GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <MyLabel fx:id="motorCurrent"  GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <Label text="RPM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label text="W" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="°C" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label text="A" GridPane.columnIndex="2" GridPane.rowIndex="3" />
             <Label text="Current:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Label text="Voltage:" />

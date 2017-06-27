@@ -3,6 +3,7 @@ package viewerController;
 import application.Main;
 import graphicComponents.MyButton;
 import javafx.scene.chart.*;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import myConnectables.MyLabel;
 import myConnectables.MySeries;
@@ -14,6 +15,7 @@ public class MotorDataController {
 
 
 	static ArrayList<MySeries> MySeries = new ArrayList<MySeries>();
+	public Label name;
 	public MyLabel  motorVoltage;
 	public MyLabel  motorNOR;
 	public MyLabel  motorPower;
