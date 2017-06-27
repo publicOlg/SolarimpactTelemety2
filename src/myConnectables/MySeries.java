@@ -23,7 +23,7 @@ public class MySeries implements Connectable {
             Platform.runLater(new Runnable() {
                 @Override
                 public void run() {
-                    if(i > 250){
+                    if(i > 100){
                         serie.getData().remove(0);
                         i--;
                     }

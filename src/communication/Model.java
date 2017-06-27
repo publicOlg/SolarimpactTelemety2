@@ -167,7 +167,8 @@ public class Model {
 	{
 		try
 		{
-			double d = Double.parseDouble(str);
+			int d = Integer.valueOf(str);
+			if(d < 101 && d > -101 ) return false;
 		}
 		catch(NumberFormatException nfe)
 		{

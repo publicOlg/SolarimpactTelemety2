@@ -254,16 +254,19 @@ public class Controller implements Initializable {
 			panel = fxmlLoader.load();
 			gridPaneMotorOverview.add(panel,0,1);
 			motorDataControllers[0][1]  = fxmlLoader.getController();
+			motorDataControllers[0][1].name.setText("Motor 2");
 
 			fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/MotorData.fxml"));
 			panel = fxmlLoader.load();
 			gridPaneMotorOverview.add(panel,1,0);
 			motorDataControllers[1][0]  = fxmlLoader.getController();
+			motorDataControllers[1][0].name.setText("Motor 3");
 
 			fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/MotorData.fxml"));
 			panel = fxmlLoader.load();
 			gridPaneMotorOverview.add(panel,1,1);
 			motorDataControllers[1][1]  = fxmlLoader.getController();
+			motorDataControllers[1][1].name.setText("Motor 4");
 
 		} catch (IOException e) {
 			e.printStackTrace();
