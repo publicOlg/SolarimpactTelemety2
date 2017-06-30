@@ -70,6 +70,7 @@
                                     <TextField fx:id="consoleLines" onAction="#setConsoleLines" prefHeight="27.0" prefWidth="139.0" />
                                  </children>
                               </HBox>
+                              <ToggleButton fx:id="buttonLogger" mnemonicParsing="false" onAction="#onLogger" prefHeight="30.0" prefWidth="254.0" text="Logger On/Off" />
                            </children>
                            <BorderPane.margin>
                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

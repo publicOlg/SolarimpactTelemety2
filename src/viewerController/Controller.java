@@ -41,6 +41,7 @@ public class Controller implements Initializable {
 
 	public TextField messageText;
 	public ToggleButton buttonAutoScroll;
+	public ToggleButton buttonLogger;
 	public ToggleButton buttonConnect;
 	public TextFlow console;
 	public ChoiceBox<String> comList;
@@ -354,6 +355,13 @@ public class Controller implements Initializable {
 
 	}
 
+	public void onLogger(){
+		if(buttonLogger.isArmed()){
+			Main.logger.newData();
+			return;
+		}
+		Main.logger.stopLogger();
+	}
 
 	public void comSelected(){
 		buttonConnect.setDisable(false);

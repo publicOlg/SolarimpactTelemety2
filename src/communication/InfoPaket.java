@@ -1,8 +1,6 @@
 package communication;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import application.Main;
 
@@ -64,9 +62,13 @@ public class InfoPaket implements Runnable,Serializable {
 		}
     	return false;
     }
+
+	public String getInfo() {
+		newInfo = false;
+		return info.substring(1, info.length());
+	}
     
-    
-	private synchronized String getInfo() {
+	private synchronized String getSyncInfo() {
 		newInfo = false;
 		return info.substring(1, info.length());
 	}
@@ -127,7 +129,7 @@ public class InfoPaket implements Runnable,Serializable {
 		while(alive){
 			if(isNew()){
 				for(Connectable con : connectables){
-					con.update(getInfo());
+					con.update(getSyncInfo());
 				}
 				try {
 					sleep(20);

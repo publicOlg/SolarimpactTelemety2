@@ -14,6 +14,8 @@ import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
+import static java.lang.Thread.sleep;
+
 /**
  * Created by TheOLGPC on 22.06.2017.
  */
@@ -76,7 +78,11 @@ public class MyTextField extends TextField implements Connectable {
             }
 
             Main.model.com.send(s);
-            System.out.println(s);
+            try {
+                sleep(20);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             return true;
         }
         return false;

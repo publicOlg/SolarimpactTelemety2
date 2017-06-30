@@ -168,7 +168,7 @@ public class Model {
 		try
 		{
 			int d = Integer.valueOf(str);
-			if(d < 101 && d > -101 ) return false;
+			if(d > 101 && d < -101 ) return false;
 		}
 		catch(NumberFormatException nfe)
 		{
