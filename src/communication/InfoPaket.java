@@ -64,7 +64,7 @@ public class InfoPaket implements Runnable,Serializable {
     }
 
 	public String getInfo() {
-		newInfo = false;
+    	if(info == null) return "";
 		return info.substring(1, info.length());
 	}
     

@@ -67,19 +67,21 @@ public class MyTextField extends TextField implements Connectable {
     public boolean send(){
         if(sign != Character.MIN_VALUE && Main.model.isNumeric(getText()) && Main.model.com != null ) {
             String s = sign + "";
-            if ((Integer.valueOf(getText()) + 100) < 100 && (Integer.valueOf(getText())) > 9) {
-                s += "0" + (Integer.valueOf(getText()) + 100);
-            } else if ((Integer.valueOf(getText()) + 100) < 10 && (Integer.valueOf(getText())) != 0) {
-                s += "00" + (Integer.valueOf(getText()) + 100);
-            } else if ((Integer.valueOf(getText()) + 100) == 0) {
+            int value = Integer.valueOf(getText()) + 100;
+
+            if (value < 100 && value > 9 ){
+                s += "0" + value;
+            } else if (value < 10 && value != 0 ){
+                s += "00" + value;
+            } else if(value == 0) {
                 s += "000";
-            } else {
-                s += Integer.valueOf(getText()) + 100;
+            }else{
+                s += value;
             }
 
             Main.model.com.send(s);
             try {
-                sleep(20);
+                sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
