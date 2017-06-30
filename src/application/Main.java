@@ -22,7 +22,7 @@ public class Main extends Application {
 	static public Controller controller;
 	static public Model model;
 	static public Data data;
-	
+	static public Logger logger;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -52,7 +52,9 @@ public class Main extends Application {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+		logger = new Logger();
+		logger.start();
+
 		primaryStage.setOnCloseRequest(e -> {
 
 			try {
@@ -62,7 +64,7 @@ public class Main extends Application {
 				oos.close();
 			}
 			catch (Exception d) { d.printStackTrace(); }
-
+			logger.stopLogger();
 	        Platform.exit();
 	        System.exit(0);
 	    });
