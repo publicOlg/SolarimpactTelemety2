@@ -24,7 +24,7 @@ public class Logger extends Thread{
                 writer.print(line(Long.toString(time)));
 
                 for(InfoPaket infoPaket : Main.model.infoPakets){
-                    line(infoPaket.getInfo());
+                    writer.print(line(infoPaket.getInfo()));
                 }
                 writer.println("\"\"");
                 time += rate;

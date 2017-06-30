@@ -28,10 +28,10 @@
                   </LinearGradient>
                </fill>
             </Circle>
-            <Circle fill="WHITE" radius="40.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+            <Circle fill="WHITE" styleClass="gaugeInner" radius="40.0" stroke="TRANSPARENT" strokeType="INSIDE" />
             <Label fx:id="labelHDOP" alignment="CENTER" contentDisplay="CENTER" prefHeight="126.0" prefWidth="200.0" text="50">
                <font>
-                  <Font size="48.00" />
+                  <Font size="40.00" />
                </font>
                <textFill>
                   <LinearGradient endX="1.0" endY="1.0">
