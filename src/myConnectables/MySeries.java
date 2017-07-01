@@ -48,4 +48,14 @@ public class MySeries implements Connectable {
 
     public void infoPaketDeleted() {
     }
+
+    @Override
+    public boolean send() {
+        return false;
+    }
+
+    @Override
+    public String getValue() {
+        return null;
+    }
 }

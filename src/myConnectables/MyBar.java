@@ -95,4 +95,14 @@ public class MyBar implements Connectable,Initializable {
         });
     }
 
+    @Override
+    public boolean send() {
+        return false;
+    }
+
+    @Override
+    public String getValue() {
+        return null;
+    }
+
 }
