@@ -5,7 +5,6 @@ import application.Main;
 import communication.Connectable;
 import communication.InfoPaket;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -57,12 +56,13 @@ public class MyButton extends Button implements Connectable{
                 }
 
                 String message = sign + "";
-                for(Connectable connectable : connectables){
-                    if(connectable.getValue().isEmpty()){
+
+                for(int id = 0; id < connectables.size(); id++){
+                    if(connectables.get(id).getValue().isEmpty()){
                         warning();
                         return;
                     }
-                    message += connectable.getValue();
+                    message += connectables.get(id).getValue();
                 }
                 Main.model.com.send(message);
             }
@@ -78,7 +78,7 @@ public class MyButton extends Button implements Connectable{
     }
 
     @Override
-    public void infoPaketDeleted() {
+    public Connectable infoPaketDeleted() {
         Main.data.setMyLabelReferences(Character.MIN_VALUE,id);
 
         Platform.runLater(new Runnable() {
@@ -88,6 +88,7 @@ public class MyButton extends Button implements Connectable{
             }
         });
 
+        return this;
     }
 
     @Override

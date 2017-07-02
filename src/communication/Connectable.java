@@ -15,7 +15,7 @@ public interface Connectable {
 		return Main.model.getInfoPaketBySign(sign);
 	}
 
-	public void infoPaketDeleted();
+	public Connectable infoPaketDeleted();
 
 	public boolean send();
 

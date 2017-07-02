@@ -61,7 +61,7 @@ public class MyCurseGauge  implements Connectable,Initializable {
         return Connectable.super.setConnection(sign);
     }
 
-    public void infoPaketDeleted() {
+    public Connectable infoPaketDeleted() {
         Main.data.setMyLabelReferences(Character.MIN_VALUE,id);
 
         Platform.runLater(new Runnable() {
@@ -71,6 +71,7 @@ public class MyCurseGauge  implements Connectable,Initializable {
                 labelCurse.setText("N/A");
             }
         });
+        return null;
     }
 
     @Override

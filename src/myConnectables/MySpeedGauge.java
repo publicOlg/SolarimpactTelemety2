@@ -9,10 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Arc;
-import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 
-import javax.tools.Tool;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -65,7 +63,7 @@ public class MySpeedGauge implements Connectable,Initializable {
     }
 
 
-    public void infoPaketDeleted() {
+    public Connectable infoPaketDeleted() {
         Main.data.setMyLabelReferences(Character.MIN_VALUE,id);
 
         Platform.runLater(new Runnable() {
@@ -75,6 +73,7 @@ public class MySpeedGauge implements Connectable,Initializable {
                 labelSpeed.setText("N/A");
             }
         });
+        return null;
     }
 
     @Override

@@ -1,6 +1,5 @@
 package myConnectables;
 
-import application.Main;
 import communication.InfoPaket;
 import communication.Connectable;
 import javafx.application.Platform;
@@ -46,7 +45,8 @@ public class MySeries implements Connectable {
     }
 
 
-    public void infoPaketDeleted() {
+    public Connectable infoPaketDeleted() {
+        return null;
     }
 
     @Override

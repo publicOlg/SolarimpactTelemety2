@@ -81,7 +81,7 @@ public class MyLabel extends Label implements Connectable {
 
 	@Override
 	public String getValue() {
-		if(sign != Character.MIN_VALUE && Main.model.isNumeric(getText()) && Main.model.com != null ) {
+		if(Main.model.isNumeric(getText()) && Main.model.com != null ) {
 			String s = "";
 			int value = Integer.valueOf(getText()) + 100;
 
@@ -102,15 +102,16 @@ public class MyLabel extends Label implements Connectable {
 
 
 	@Override
-	public void infoPaketDeleted() {
+	public Connectable infoPaketDeleted() {
 		Main.data.setMyLabelReferences(Character.MIN_VALUE,id);
 
 		Platform.runLater(new Runnable() {
 			@Override
 			public void run() {
 				getTooltip().setText("not connected");
-				setText("N/A");
+				//setText("");
 			}
 		});
+		return this;
 	}
 }

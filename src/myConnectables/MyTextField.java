@@ -65,7 +65,7 @@ public class MyTextField extends TextField implements Connectable {
     }
 
     public String getValue(){
-        if(sign != Character.MIN_VALUE && Main.model.isNumeric(getText()) && Main.model.com != null ) {
+        if(Main.model.isNumeric(getText()) && Main.model.com != null ) {
             String s = "";
             int value = Integer.valueOf(getText()) + 100;
 
@@ -102,27 +102,24 @@ public class MyTextField extends TextField implements Connectable {
             }
 
             Main.model.com.send(s);
-            try {
-                sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
             return true;
         }
         return false;
     }
 
     @Override
-    public void infoPaketDeleted() {
+    public Connectable infoPaketDeleted() {
         Main.data.setMyLabelReferences(Character.MIN_VALUE,id);
 
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 getTooltip().setText("not connected");
-                setText("N/A");
+                setText("");
             }
         });
+        return this;
     }
 
     /*

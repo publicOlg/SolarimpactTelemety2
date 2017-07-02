@@ -78,33 +78,6 @@ public class SettingsController implements Initializable {
     }
 
 
-  /*  public void onDifSend(){
-        if(xDifLabel.send() && yDifLabel.send())return;
-        warning();
-
-    }
-
-    public void onRudderSend(){
-        if (rudderOne.send() && rudderTwo.send()
-                && rudderThree.send() && rudderFour.send()) return;
-        warning();
-    }
-
-    public void onPilotSend(){
-        if (textPilot.send())return;
-        warning();
-    }
-
-    public void onLoggerSend(){
-        if(textLogger.send()) return;
-        warning();
-    }
-
-    public void onHighttSend(){
-        if (textHight.send()) return;
-        warning();
-    }*/
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         StringConverter<Number> converter = new NumberStringConverter();
@@ -114,13 +87,13 @@ public class SettingsController implements Initializable {
         Bindings.bindBidirectional(textHight.textProperty(),hightSlider.valueProperty(),converter);
 
 
-        buttonRudder.addConnectale(rudderOne);
-        buttonRudder.addConnectale(rudderTwo);
-        buttonRudder.addConnectale(rudderThree);
-        buttonRudder.addConnectale(rudderFour);
+        buttonRudder.addConnectale(rudderOne.infoPaketDeleted());
+        buttonRudder.addConnectale(rudderTwo.infoPaketDeleted());
+        buttonRudder.addConnectale(rudderThree.infoPaketDeleted());
+        buttonRudder.addConnectale(rudderFour.infoPaketDeleted());
 
-        buttonDif.addConnectale(xDifLabel);
-        buttonDif.addConnectale(yDifLabel);
+        buttonDif.addConnectale(xDifLabel.infoPaketDeleted());
+        buttonDif.addConnectale(yDifLabel.infoPaketDeleted());
 
     }
 }
