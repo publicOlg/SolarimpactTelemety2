@@ -35,7 +35,7 @@ public class MyTextField extends TextField implements Connectable {
                 sign = Main.controller.openSelectChannel(event.getScreenX(),event.getScreenY());
                 if(sign != Character.MIN_VALUE){
                     setConnection(sign);
-            }
+                }
             }
         });
     }
@@ -64,6 +64,28 @@ public class MyTextField extends TextField implements Connectable {
         return Connectable.super.setConnection(sign);
     }
 
+    public String getValue(){
+        if(Main.model.isNumeric(getText()) && Main.model.com != null ) {
+            String s = "";
+            int value = Integer.valueOf(getText()) + 100;
+
+            if (value < 100 && value > 9 ){
+                s += "0" + value;
+            } else if (value < 10 && value != 0 ){
+                s += "00" + value;
+            } else if(value == 0) {
+                s += "000";
+            }else{
+                s += value;
+            }
+
+            return s;
+        }
+        return "";
+
+
+    }
+
     public boolean send(){
         if(sign != Character.MIN_VALUE && Main.model.isNumeric(getText()) && Main.model.com != null ) {
             String s = sign + "";
@@ -80,27 +102,24 @@ public class MyTextField extends TextField implements Connectable {
             }
 
             Main.model.com.send(s);
-            try {
-                sleep(200);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+
             return true;
         }
         return false;
     }
 
     @Override
-    public void infoPaketDeleted() {
+    public Connectable infoPaketDeleted() {
         Main.data.setMyLabelReferences(Character.MIN_VALUE,id);
 
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
                 getTooltip().setText("not connected");
-                setText("N/A");
+                setText("");
             }
         });
+        return this;
     }
 
     /*

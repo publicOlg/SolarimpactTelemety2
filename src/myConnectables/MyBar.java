@@ -8,14 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
-import static oracle.jrockit.jfr.events.Bits.intValue;
 
 /**
  * Created by TheOLGPC on 20.06.2017.
@@ -84,7 +81,7 @@ public class MyBar implements Connectable,Initializable {
         return Connectable.super.setConnection(sign);
     }
 
-    public void infoPaketDeleted() {
+    public Connectable infoPaketDeleted() {
         Main.data.setMyLabelReferences(Character.MIN_VALUE,id);
         Platform.runLater(new Runnable() {
             @Override
@@ -93,6 +90,17 @@ public class MyBar implements Connectable,Initializable {
                 pwmLabel.setText("N/A");
             }
         });
+        return this;
+    }
+
+    @Override
+    public boolean send() {
+        return false;
+    }
+
+    @Override
+    public String getValue() {
+        return null;
     }
 
 }

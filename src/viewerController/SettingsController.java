@@ -5,8 +5,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.util.StringConverter;
 import javafx.util.converter.NumberStringConverter;
+import myConnectables.MyButton;
 import myConnectables.MyLabel;
 import myConnectables.MyTextField;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,6 +24,7 @@ public class SettingsController implements Initializable {
     public Slider xDif;
     public MyLabel xDifLabel;
     public MyLabel yDifLabel;
+    public MyButton buttonDif;
 
     public MyTextField rudderOne;
     public MyTextField rudderTwo;
@@ -29,6 +32,7 @@ public class SettingsController implements Initializable {
     public MyTextField rudderFour;
     public CheckBox checkTwo;
     public CheckBox checkFour;
+    public MyButton buttonRudder;
 
     public ToggleButton loggerOn;
     public MyTextField textLogger;
@@ -74,42 +78,6 @@ public class SettingsController implements Initializable {
     }
 
 
-    public void onDifSend(){
-        if(xDifLabel.send() && yDifLabel.send())return;
-        warning();
-
-    }
-
-    public void onRudderSend(){
-        if (rudderOne.send() && rudderTwo.send()
-                && rudderThree.send() && rudderFour.send()) return;
-        warning();
-    }
-
-    public void onPilotSend(){
-        if (textPilot.send())return;
-        warning();
-    }
-
-    public void onLoggerSend(){
-        if(textLogger.send()) return;
-        warning();
-    }
-
-    public void onHighttSend(){
-        if (textHight.send()) return;
-        warning();
-    }
-
-    private void warning(){
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error Dialog");
-        alert.setHeaderText("Send Process did not work!");
-        alert.setContentText("False input Value or missing Channel Information.");
-
-        alert.showAndWait();
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         StringConverter<Number> converter = new NumberStringConverter();
@@ -117,6 +85,15 @@ public class SettingsController implements Initializable {
         Bindings.bindBidirectional(xDifLabel.textProperty(),xDif.valueProperty(),converter);
         Bindings.bindBidirectional(textPilot.textProperty(),pilotSlider.valueProperty(),converter);
         Bindings.bindBidirectional(textHight.textProperty(),hightSlider.valueProperty(),converter);
+
+
+        buttonRudder.addConnectale(rudderOne.infoPaketDeleted());
+        buttonRudder.addConnectale(rudderTwo.infoPaketDeleted());
+        buttonRudder.addConnectale(rudderThree.infoPaketDeleted());
+        buttonRudder.addConnectale(rudderFour.infoPaketDeleted());
+
+        buttonDif.addConnectale(xDifLabel.infoPaketDeleted());
+        buttonDif.addConnectale(yDifLabel.infoPaketDeleted());
 
     }
 }

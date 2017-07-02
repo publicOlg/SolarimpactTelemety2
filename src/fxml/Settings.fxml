@@ -15,6 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import myConnectables.MyTextField?>
+<?import myConnectables.MyButton?>
 
 <?import myConnectables.MyLabel?>
 <AnchorPane minHeight="355" prefWidth="760.0" styleClass="Settings" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewerController.SettingsController">
@@ -23,14 +24,14 @@
          <children>
             <Label text="Settings:" />
             <GridPane prefHeight="291.0" prefWidth="750.0" VBox.vgrow="ALWAYS">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="643.0" minWidth="10.0" prefWidth="307.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="576.0" minWidth="10.0" prefWidth="443.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="261.0" minHeight="10.0" prefHeight="179.0" vgrow="ALWAYS" />
-                <RowConstraints maxHeight="229.0" minHeight="10.0" prefHeight="124.0" vgrow="ALWAYS" />
-              </rowConstraints>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="643.0" minWidth="10.0" prefWidth="307.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="576.0" minWidth="10.0" prefWidth="443.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="261.0" minHeight="10.0" prefHeight="179.0" vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="229.0" minHeight="10.0" prefHeight="124.0" vgrow="ALWAYS" />
+               </rowConstraints>
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" spacing="20">
                      <children>
@@ -58,7 +59,7 @@
                               <HBox>
                                  <children>
                                     <Region prefHeight="200.0" prefWidth="200.0" />
-                                    <Button minWidth="60.0" onAction="#onDifSend" mnemonicParsing="false" text="Send" />
+                                    <MyButton fx:id="buttonDif" minWidth="60.0" mnemonicParsing="false" text="Send" />
                                  </children>
                               </HBox>
                            </children>
@@ -77,26 +78,38 @@
                         </Label>
                         <HBox prefHeight="23.0" prefWidth="205.0" spacing="5.0">
                            <children>
-                              <MyTextField fx:id="rudderOne" HBox.hgrow="ALWAYS" />
+                              <HBox spacing="5">
+                                 <Label minWidth="20" text="P:" alignment="BASELINE_CENTER"/>
+                                 <MyTextField fx:id="rudderOne" HBox.hgrow="ALWAYS" />
+                              </HBox>
+                              <HBox spacing="5">
+                              <Label minWidth="20" text="I:" alignment="BASELINE_CENTER"/>
                               <MyTextField fx:id="rudderTwo" HBox.hgrow="ALWAYS" />
+                              </HBox>
                            </children>
                         </HBox>
                         <HBox prefHeight="26.0" prefWidth="205.0" spacing="5.0">
                            <children>
-                              <MyTextField fx:id="rudderThree" HBox.hgrow="ALWAYS" />
-                              <MyTextField fx:id="rudderFour" HBox.hgrow="ALWAYS" />
+
+                              <HBox spacing="5">
+                                 <Label minWidth="20" text="D:" alignment="BASELINE_CENTER"/>
+                                 <MyTextField fx:id="rudderThree" HBox.hgrow="ALWAYS" />
+                              </HBox>
+
+                              <HBox spacing="5">
+                                 <Label minWidth="20" text="-:" alignment="BASELINE_CENTER" />
+                                 <MyTextField fx:id="rudderFour" HBox.hgrow="ALWAYS" />
+                              </HBox>
                            </children>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
                            <children>
-                              <CheckBox fx:id="checkTwo" mnemonicParsing="false" onMouseClicked="#onCheckRudder" text="2x" />
-                              <CheckBox fx:id="checkFour" mnemonicParsing="false" onMouseClicked="#onCheckRudder" text="4x" />
                               <Region prefHeight="12.0" prefWidth="90.0" HBox.hgrow="ALWAYS" />
-                              <Button onAction="#onRudderSend" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Send">
+                              <MyButton fx:id="buttonRudder" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="50.0" text="Send">
                                  <HBox.margin>
                                     <Insets />
                                  </HBox.margin>
-                              </Button>
+                              </MyButton>
                            </children>
                         </HBox>
                      </children>
@@ -117,7 +130,7 @@
                               <Region prefHeight="25.0" prefWidth="92.0" HBox.hgrow="ALWAYS" />
                               <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="150.0" prefHeight="30.0" prefWidth="99.0" text="Logs per Second:" />
                               <MyTextField fx:id="textLogger" minWidth="100.0" prefHeight="30.0" prefWidth="212.0" />
-                              <Button onAction="#onLoggerSend" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Send" />
+                              <Button minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Send" />
                            </children>
                            <VBox.margin>
                               <Insets left="5.0" />
@@ -140,7 +153,7 @@
                               <Region prefHeight="25.0" prefWidth="95.0" HBox.hgrow="ALWAYS" />
                               <Label minWidth="100.0" prefHeight="30.0" prefWidth="50.0" alignment="CENTER_RIGHT" text="Trägheit in ms:" />
                               <MyLabel fx:id="textPilot" minWidth="${textLogger.width}" prefHeight="30.0" prefWidth="186.0" text="0" />
-                              <Button onAction="#onPilotSend" minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Send" />
+                              <Button  minWidth="60.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="38.0" text="Send" />
                            </children>
                            <padding>
                               <Insets left="5.0" right="5.0" />
@@ -172,7 +185,7 @@
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </MyLabel>
-                              <Button onAction="#onHighttSend" minWidth="60.0" mnemonicParsing="false" text="Send" />
+                              <Button  minWidth="60.0" mnemonicParsing="false" text="Send" />
                            </children>
                         </HBox>
                      </children>

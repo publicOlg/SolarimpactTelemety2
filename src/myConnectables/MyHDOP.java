@@ -8,7 +8,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 
@@ -64,7 +63,7 @@ public class MyHDOP implements Connectable,Initializable {
         return Connectable.super.setConnection(sign);
     }
 
-    public void infoPaketDeleted() {
+    public Connectable infoPaketDeleted() {
         Main.data.setMyLabelReferences(Character.MIN_VALUE,id);
 
         Platform.runLater(new Runnable() {
@@ -74,5 +73,16 @@ public class MyHDOP implements Connectable,Initializable {
                 labelHDOP.setText("50");
             }
         });
+        return null;
+    }
+
+    @Override
+    public boolean send() {
+        return false;
+    }
+
+    @Override
+    public String getValue() {
+        return null;
     }
 }
