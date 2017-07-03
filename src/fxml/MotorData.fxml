@@ -58,12 +58,15 @@
             <Label text="RPM" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <Label text="°C" GridPane.columnIndex="2" GridPane.rowIndex="2" />
             <Label text="A" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label text="Current:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="Capacity:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
             <Label text="Voltage:" />
             <Label text="V" GridPane.columnIndex="5" />
             <Label text="mAh" GridPane.columnIndex="5" GridPane.rowIndex="1" />
             <MyLabel fx:id="akkuVoltage"  GridPane.columnIndex="4" />
             <MyLabel fx:id="akkuCurrent"  GridPane.columnIndex="4" GridPane.rowIndex="1" />
+             <Label fx:id="labelPower" text="Power:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+             <Label text="0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+             <Label text="W" GridPane.columnIndex="5" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <LineChart fx:id="chart" animated="false" createSymbols="false"  onMouseClicked="#onChartMouseClicked" verticalZeroLineVisible="false" VBox.vgrow="ALWAYS">

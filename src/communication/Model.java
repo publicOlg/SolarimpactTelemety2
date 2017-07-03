@@ -163,11 +163,25 @@ public class Model {
 		setColors();
 	}
 
-	public boolean isNumeric(String str)
+	public boolean isIntNumeric(String str)
 	{
 		try
 		{
 			int d = Integer.valueOf(str);
+			if(d > 101 && d < -101 ) return false;
+		}
+		catch(NumberFormatException nfe)
+		{
+			return false;
+		}
+		return true;
+	}
+
+	public boolean isDoubleNumeric(String str)
+	{
+		try
+		{
+			double d = Double.valueOf(str);
 			if(d > 101 && d < -101 ) return false;
 		}
 		catch(NumberFormatException nfe)
