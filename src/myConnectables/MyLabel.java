@@ -7,9 +7,6 @@ import javafx.application.Platform;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tooltip;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import static java.lang.Thread.sleep;
 
 
@@ -54,7 +51,7 @@ public class MyLabel extends Label implements Connectable {
 	}
 
 	public boolean send(){
-		if(sign != Character.MIN_VALUE && Main.model.isNumeric(getText()) && Main.model.com != null ) {
+		if(sign != Character.MIN_VALUE && Main.model.isIntNumeric(getText()) && Main.model.com != null ) {
 			String s = sign + "";
 			int value = Integer.valueOf(getText()) + 100;
 
@@ -81,7 +78,7 @@ public class MyLabel extends Label implements Connectable {
 
 	@Override
 	public String getValue() {
-		if(Main.model.isNumeric(getText()) && Main.model.com != null ) {
+		if(Main.model.isIntNumeric(getText()) && Main.model.com != null ) {
 			String s = "";
 			int value = Integer.valueOf(getText()) + 100;
 

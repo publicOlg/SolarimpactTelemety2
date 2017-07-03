@@ -2,16 +2,20 @@ package viewerController;
 
 import application.Main;
 import graphicComponents.MyButton;
+import javafx.fxml.Initializable;
 import javafx.scene.chart.*;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import myConnectables.MyLabel;
 import myConnectables.MySeries;
+
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MotorDataController {
+public class MotorDataController implements Initializable{
 
 
 	static ArrayList<MySeries> MySeries = new ArrayList<MySeries>();
@@ -22,6 +26,7 @@ public class MotorDataController {
 	public MyLabel  motorCurrent;
 	public MyLabel  akkuVoltage;
 	public MyLabel  akkuCurrent;
+	public Label labelPower;
 	public LineChart chart;
 	public MyButton motorSwitch;
 	public double xTime = 0;
@@ -57,7 +62,11 @@ public class MotorDataController {
 	}
 
 
-	
+	private void doPower(){
+		if(Main.model.isDoubleNumeric(motorVoltage.getText())  && Main.model.isDoubleNumeric(motorCurrent.getText())) {
+			labelPower.setText(Double.valueOf(motorVoltage.getText()) * Double.valueOf(motorCurrent.getText()) + "");
+		}
+	}
 	
 	public MotorDataController(){
 
@@ -99,5 +108,10 @@ public class MotorDataController {
 	
 	public void removeSeries(char sign){
 		
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		//motorCurrent.proper
 	}
 }
